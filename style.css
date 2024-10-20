@@ -1,0 +1,135 @@
+/* Global Styles */
+body {
+    background-image: url('images/background.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    transition: background-color 1s ease-in-out;
+
+
+
+  }
+
+
+
+.video-background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: -1;
+}
+
+.video-background video {
+    min-width: 100%;
+    min-height: 100%;
+    object-fit: cover;
+}
+
+.weather-data {
+    background-color: rgba(255, 255, 255, 0.8);
+    transition: background-color 0.5s ease-in-out;
+}
+
+/* Background Styles */
+.clear { background-color: #87CEEB; }
+.cloudy { background-color: #B0C4DE; }
+.rainy { background-color: #4F4F4F; }
+.snowy { background-color: #E0FFFF; }
+.thunderstorm { background-color: #5C5C5C; }
+.drizzle { background-color: #A9A9A9; }
+
+
+
+/* Add your existing CSS here */
+
+
+
+/* Add styles for the weather widget and forecast grid */
+
+.weather-widget {
+
+    display: flex;
+  
+    justify-content: space-between;
+  
+    align-items: flex-start;
+    opacity: 0; /* Start hidden */
+    animation: fadeIn 0.5s forwards; /* Fade in over 0.5 seconds */
+  
+  }
+  
+  
+  
+  .forecast-grid {
+  
+    display: grid;
+  
+    grid-template-columns: repeat(5, 1fr);
+  
+    gap: 10px;
+  
+    max-width: 300px; /* Adjust the width as needed */
+  
+  }
+  
+  
+  
+  .forecast-day {
+  
+    background-color: white;
+  
+    padding: 10px;
+  
+    border-radius: 5px;
+  
+    text-align: center;
+  
+    font-size: 0.8em; /* Smaller font size */
+  
+  }
+  #spinner {
+    display: none;
+    align-items: center;
+    justify-content: center;
+}
+
+.show-spinner {
+    display: flex !important;
+}
+
+.loading-spinner {
+  border: 16px solid #f3f3f3;
+  border-radius: 50%;
+  border-top: 16px solid #3498db;
+  width: 60px;
+  height: 60px;
+  animation: spin 1s linear infinite;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.weather-icon {
+  opacity: 0; /* Start hidden */
+  animation: fadeIn 0.5s forwards; /* Fade in over 0.5 seconds */
+}
+
